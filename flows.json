@@ -1,0 +1,179 @@
+[
+    {
+        "id": "554bfb9e04c39e99",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6abd489c40f0686c",
+        "type": "inject",
+        "z": "554bfb9e04c39e99",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "c3cbab6f9457d820"
+            ]
+        ]
+    },
+    {
+        "id": "c3cbab6f9457d820",
+        "type": "http request",
+        "z": "554bfb9e04c39e99",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8000/getinfo",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "4184f3f0d87691ac",
+                "524eda5461069e2c"
+            ]
+        ]
+    },
+    {
+        "id": "4e6db4bfccadecc1",
+        "type": "debug",
+        "z": "554bfb9e04c39e99",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4184f3f0d87691ac",
+        "type": "MSSQL",
+        "z": "554bfb9e04c39e99",
+        "mssqlCN": "55f986bfef7a2e2d",
+        "name": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "query": "SP_SORMonitor",
+        "modeOpt": "",
+        "modeOptType": "execute",
+        "queryOpt": "payload",
+        "queryOptType": "editor",
+        "paramsOpt": "",
+        "paramsOptType": "editor",
+        "rows": "rows",
+        "rowsType": "msg",
+        "parseMustache": true,
+        "params": [
+            {
+                "output": false,
+                "name": "action",
+                "type": "NVarChar(50)",
+                "valueType": "str",
+                "value": "getinfo",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            },
+            {
+                "output": false,
+                "name": "name",
+                "type": "NVarChar(500)",
+                "valueType": "msg",
+                "value": "payload.name",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            },
+            {
+                "output": false,
+                "name": "time",
+                "type": "DateTime2",
+                "valueType": "msg",
+                "value": "payload.time",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            }
+        ],
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "4e6db4bfccadecc1"
+            ]
+        ]
+    },
+    {
+        "id": "524eda5461069e2c",
+        "type": "debug",
+        "z": "554bfb9e04c39e99",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "55f986bfef7a2e2d",
+        "type": "MSSQL-CN",
+        "tdsVersion": "7_4",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "1433",
+        "encyption": true,
+        "trustServerCertificate": true,
+        "database": "SORMonitor",
+        "useUTC": false,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false,
+        "enableArithAbort": true,
+        "readOnlyIntent": false
+    }
+]
