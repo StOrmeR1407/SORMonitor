@@ -40,7 +40,7 @@ Web sẽ vẽ biểu đồ tổng quan về các ứng dụng đã sử dụng s
 
 Biểu đồ tròn dùng để có cái nhìn tổng quan về loại ứng dụng đã sử dụng trong tuần 
 
-[![SORMonitor](./introduce/linechart.PNG)](https://www.facebook.com/hidb1407/)
+[![SORMonitor](./introduce/linechart1.PNG)](https://www.facebook.com/hidb1407/)
 
 Biểu đồ cột giữa dùng để hiển thị chi tiết về top 5 ứng dụng đã sử dụng trong tuần
 
