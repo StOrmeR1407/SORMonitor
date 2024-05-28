@@ -38,8 +38,10 @@ Web sẽ vẽ biểu đồ tổng quan về các ứng dụng đã sử dụng s
 
 [![SORMonitor](./introduce/piechart.PNG)](https://www.facebook.com/hidb1407/)
 
-Biểu đồ tròn dùng để có cái nhìn tổng quan về các ứng dụng đã sử dụng
+Biểu đồ tròn dùng để có cái nhìn tổng quan về loại ứng dụng đã sử dụng trong tuần 
 
 [![SORMonitor](./introduce/linechart.PNG)](https://www.facebook.com/hidb1407/)
 
-Biểu đồ cột dùng để hiển thị chi tiết về thời gian sử dụng của một ứng dụng cụ thể.
+Biểu đồ cột giữa dùng để hiển thị chi tiết về top 5 ứng dụng đã sử dụng trong tuần
+
+Biểu đồ cột bên phải dùng để hiển thị thời gian đã sử dụng laptop trong một tuần
